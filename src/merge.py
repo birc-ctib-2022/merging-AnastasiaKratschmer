@@ -13,10 +13,12 @@ def merge(x: list[int], y: list[int]) -> list[int]:
     """
     i, j = 0, 0
     z = []  # a new list to copy elements into
-    # FIXME: fill out the loop so you merge the lists
-    # until one of them is empty
-    while i < len(x) and j < len(y):
-        break  # FIXME: you shouldn't just break here
-    # At least one of the lists is empty now. Copy the
-    # remainder of the other into z.
-    return z
+    while i < len(x) or j < len(y):
+        if i<len(x):
+            z.append(x[0])
+            x.pop(0)
+        if j<len(y):
+            z.append(y[0])
+            y.pop(0)
+    w=sorted(z)
+    print(w)
